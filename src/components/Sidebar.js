@@ -1,48 +1,49 @@
 import React from "react";
 import Sidebar from "react-sidebar";
- 
-const mql = window.matchMedia(`(min-width: 800px)`);
+import styled from "styled-components";
+import DashboardPage from "./Dashboard"
+
+import Dashboard from "../assets/img/Dashboard.png";
+import Chat from "../assets/img/Chat.png";
+import Cog from "../assets/img/Cog.png";
+import Folder from "../assets/img/Folder.png";
+import Message from "../assets/img/Message.png";
+
  
 class SideBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sidebarDocked: mql.matches,
-      sidebarOpen: false
-    };
- 
-    this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
-  }
- 
-  componentWillMount() {
-    mql.addListener(this.mediaQueryChanged);
-  }
- 
-  componentWillUnmount() {
-    this.state.mql.removeListener(this.mediaQueryChanged);
-  }
- 
-  onSetSidebarOpen(open) {
-    this.setState({ sidebarOpen: open });
-  }
- 
-  mediaQueryChanged() {
-    this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
-  }
+  
  
   render() {
     return (
-      <Sidebar
-        sidebar={<b>Sidebar content</b>}
-        open={this.state.sidebarOpen}
-        docked={this.state.sidebarDocked}
-        onSetOpen={this.onSetSidebarOpen}
-      >
-        <b>Main content</b>
-      </Sidebar>
+        <>
+         <div class="sidenav">
+        <a href="#about">
+        <Image src={Dashboard} alt="..." />
+        </a>
+        <a href="#services">
+        <Image src={Chat} alt="..." />
+        </a>
+        <a href="#clients">
+        <Image src={Folder} alt="..." />
+        </a>
+        <a href="#contact">
+        <Image src={Message} alt="..." />
+        </a>
+        <a href="#contact">
+        <Image src={Cog} alt="..." />
+        </a>
+      </div>
+      <DashboardPage />
+        </>
+       
     );
   }
 }
  
 export default SideBar;
+
+const Image = styled.img`
+  height: 21px;
+  width: 23px;
+  margin: auto 0;
+`;

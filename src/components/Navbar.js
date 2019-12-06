@@ -66,6 +66,7 @@ const NavBar = styled(animated.nav)`
 const FlexContainer = styled.div`
   max-width: 120rem;
   display: flex;
+  margin-left: 5px !important;
   margin: auto;
   padding: 0 2rem;;
   justify-content: space-between;
