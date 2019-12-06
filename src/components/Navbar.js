@@ -107,6 +107,7 @@ const NavLinksButtons = styled(animated.ul)`
   justify-self: end;
   list-style-type: none;
   margin: auto 0px;
+  margin-right: -160px !important;
 
   & button {
     padding-top: 10px;

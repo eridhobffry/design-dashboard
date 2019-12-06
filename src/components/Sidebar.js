@@ -33,7 +33,7 @@ class SideBar extends React.Component {
         <Image src={Cog} alt="..." />
         </a>
       </div>
-      <DashboardPage />
+      
         </>
        
     );

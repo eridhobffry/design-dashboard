@@ -5,6 +5,9 @@ import Sidebar from "./components/Sidebar"
 import GlobalStyle from './styles/Global';
 import "./assets/css/style.css"
 
+import AdminLayout from "./pages/layout/admin/component"
+import Dashboard from "./pages/section/dashboard/component"
+
 class App extends Component {
   state = {
     navbarOpen: false
@@ -18,12 +21,8 @@ class App extends Component {
 
     return (
       <>
-        <Navbar 
-          navbarState={this.state.navbarOpen} 
-          handleNavbar={this.handleNavbar}
-        />
-        <Sidebar/>
-        <GlobalStyle />
+        <AdminLayout/>
+        <Dashboard/>
       </>
     )
   }
