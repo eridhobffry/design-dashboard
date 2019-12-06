@@ -13,7 +13,6 @@ class Dashboard extends React.Component {
         isLoading: true,
         errors: null
       };
-
       getData() {
         axios
           .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
@@ -50,7 +49,7 @@ class Dashboard extends React.Component {
         display: 'inline-block',
       };
     return (
-        <div className="main">
+        <div className="main inset-xxs-left-90">
  <Container>
   <Row>
     <Col xs={12} sm={6} md={6} lg={6}>
@@ -78,15 +77,6 @@ class Dashboard extends React.Component {
           ) : (
             <p>Loading...</p>
           )}
-       
-            
-        
-    
-        
-    
-        <DivRight>
-        
-        </DivRight>
     </Col>
   </Row>
 </Container>

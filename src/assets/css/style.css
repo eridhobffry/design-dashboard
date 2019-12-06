@@ -45,3 +45,31 @@
   .main {
       padding-top: 66px;
   }
+
+  .bg-white {
+	background: #fff;
+	fill: #fff;
+}
+
+@media (max-width: 480px) { 
+    .inset-xxs-left-90 {
+        padding-left: 90px
+    }
+
+    #wrapped-mobile-burger {
+        background: unset;
+    }
+
+    #mobile-burger {
+    width: 30%;
+    margin-left: 305px;
+    background: #f1f1f16e;
+    }
+
+    .color-burger span {
+        background: #0077FF;
+    }
+    .color-burger .open span {
+        background: #0077FF;
+    }
+}
