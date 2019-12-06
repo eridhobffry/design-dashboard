@@ -27,7 +27,7 @@ const Navbar = (props) => {
           <NavLinks style={linkAnimation}>
             <a href="/">Overview</a>
             <a href="/">Campaigns</a>
-            <a href="/">Anaytics</a>
+            <a href="/">Analytics</a>
           </NavLinks>
           <NavLinksButtons style={linkAnimation}>
             <button>

@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
-    background: #fdfdfd;
+    background: #fbfbfb;
   }
 `;
 

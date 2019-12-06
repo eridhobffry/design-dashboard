@@ -51,13 +51,112 @@
 	fill: #fff;
 }
 
+.section-0 {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.section-20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.section-34 {
+	padding-top: 34px;
+	padding-bottom: 34px;
+}
+
+.section-41 {
+	padding-top: 41px;
+	padding-bottom: 41px;
+}
+
+.section-50 {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.section-66 {
+	padding-top: 66px;
+	padding-bottom: 66px;
+}
+
+.section-85 {
+	padding-top: 85px;
+	padding-bottom: 85px;
+}
+
+.section-98 {
+	padding-top: 98px;
+	padding-bottom: 98px;
+}
+
+.section-110 {
+	padding-top: 110px;
+	padding-bottom: 110px;
+}
+
+.section-124 {
+	padding-top: 124px;
+	padding-bottom: 124px;
+}
+
+.section-254 {
+	padding-top: 254px;
+	padding-bottom: 254px;
+}
+
+.section-350 {
+	padding-top: 350px;
+	padding-bottom: 350px;
+}
+
+.section-top-41 {
+	padding-top: 41px;
+}
+
+.section-top-50 {
+	padding-top: 50px;
+}
+
+.section-top-66 {
+	padding-top: 66px;
+}
+
+.section-top-110 {
+	padding-top: 110px;
+}
+.section-top-254 {
+	padding-top: 254px;
+}
+
+.outline-border {
+    border: 1px solid #D8D8D8;
+}
+
+.outline-right {
+    border-right: 1px solid #D8D8D8;
+}
+.outline-bottom {
+    border-bottom: 1px solid #D8D8D8;
+}
+
 @media (max-width: 480px) { 
     .inset-xxs-left-90 {
         padding-left: 90px
     }
 
+    .section-xxs-20 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     #wrapped-mobile-burger {
         background: unset;
+    }
+
+    .outline-right {
+        border-right: unset;
     }
 
     #mobile-burger {
