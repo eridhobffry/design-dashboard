@@ -36,6 +36,10 @@
     font-size: 14px; /* Increased text to enable scrolling */
     padding: 0px 10px;
   }
+
+  #main-dashboard {
+      width: 120rem;
+  }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
@@ -139,6 +143,10 @@
 }
 .outline-bottom {
     border-bottom: 1px solid #D8D8D8;
+}
+
+.m-t-m-80 {
+    margin-top: -80px;
 }
 
 @media (max-width: 480px) { 
