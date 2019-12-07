@@ -1,14 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import DivRight from "../styles/fragment/dashboard_style/component"
 import ProgressLinear from "../building_blocks/chart/progress_linear"
 import Pie from "../building_blocks/chart/pie"
 import VerticalBar from "../building_blocks/chart/vertical_bar"
-import { Line, Circle } from 'rc-progress';
+import TableTD from "../building_blocks/table"
 
-import "../../node_modules/react-vis/dist/style.css"
-import {XYPlot, VerticalBarSeries} from 'react-vis';
+import {
+    Subtitle,
+    TitleGraph,
+    TextUnit,
+    NumberOnStatistic,
+    Section41,
+    Down40,
+    Section20,
+    TermLabel,
+    TermValue,
+    OverflowXTable
+} from "../styles/fragment/dashboard_style/component"
 
 import axios from 'axios';
 
@@ -53,6 +62,25 @@ class Dashboard extends React.Component {
             { x: "n", y: 8 },
             { x: "o", y: 3 }
           ],
+          term: [
+            {
+                id: 1,
+                value: 85.08
+            },
+            {
+                id: 2,
+                value: 1.76
+            },
+            {
+                id: 3,
+                value: 33.42
+            },
+            {
+                id: 4,
+                value: 75.11
+            }
+          ],
+          dataUser: [],
         isLoading: true,
         errors: null
       };
@@ -72,6 +100,29 @@ class Dashboard extends React.Component {
           .then(topDataOverview => {
             this.setState({
                 topDataOverview,
+              isLoading: false
+            });
+          })
+          .catch(error => this.setState({ error, isLoading: false }));
+      }
+
+      getDataUser() {
+        axios
+          .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
+          .then(response =>
+            response.data.supportRequest.map(td => ({
+              id: `${td.id}`,
+              name: `${td.name}`,
+              email: `${td.email}`,
+              time: `${td.time}`,
+              phoneNumber: `${td.phoneNumber}`,
+              city: `${td.city}`,
+              status: `${td.status}`,
+            }))
+          )
+          .then(dataUser => {
+            this.setState({
+                dataUser,
               isLoading: false
             });
           })
@@ -158,6 +209,7 @@ class Dashboard extends React.Component {
         this.getTopDataOverview();
         this.getGeneralResultsStat();
         this.getRatingsCategory();
+        this.getDataUser();
         // this.getDataGeneralResults();
         // this.getDataRatingsCategory();
       }
@@ -168,7 +220,8 @@ class Dashboard extends React.Component {
       console.log(this.state.ratingsCategoryStat)
       console.log(this.state.dataRatingVer)
       console.log(this.state.dataGeneralVer)
-      const { isLoading, topDataOverview, generalResultsStat, ratingsCategoryStat } = this.state;
+      console.log(this.state.dataUser)
+      const { isLoading, topDataOverview, generalResultsStat, ratingsCategoryStat, dataUser } = this.state;
     const containerStyle = {
         width: '150px',
       };
@@ -301,32 +354,98 @@ class Dashboard extends React.Component {
                     </Col>
                     <Col xs={12} sm={12} md={2} lg={2}>
                         <Section41>
-                            <Row>
-                                <Col xs={12} sm={12} md={6} lg={6} >
-                                    aaa 
+                            
+                                {this.state.term.map((t) => {
+                                    return (
+                                        <>
+                                        <Section20>
+                                        <Row>
+                                        <Col xs={12} sm={12} md={6} lg={6} >
+                                            <TermLabel>
+                                            Term {t.id} 
+                                            </TermLabel>
                                 </Col>
                                 <Col xs={12} sm={12} md={6} lg={6} >
-                                aaa 
+                                    <TermValue>
+                                    {t.value} 
+                                    </TermValue>
                                 </Col>
-                            </Row>
+                                        </Row>
+                                        </Section20>
+                                        </>
+                                    )
+                                })}
                         </Section41>
                     </Col>
                 </Row>
-                <Row>
-                <Col xs={12} sm={12} md={12} lg={12}>
-
-</Col>
-                </Row>
             </div>  
-            <Container>
-                <Row>
+            <Section41>
+<Row>
                 <Col xs={12} sm={12} md={12} lg={12}>
-aaa
+                    <Subtitle>
+                    Support Requests
+                    </Subtitle>
 </Col>
                 </Row>
-            </Container>
+                <Row>
+                <Col xs={12} sm={12} md={12} lg={12}>
+                    <Section20>
+                        <OverflowXTable>
+                        <table>
+  <thead>
+    <tr>
+      <th>
+      <TermLabel>
+      Name
+            </TermLabel>
+          </th>
+      <th>
+      <TermLabel>
+      Email
+            </TermLabel>
+          </th>
+      <th>
+      <TermLabel>
+      Time
+            </TermLabel>
+          </th>
+      <th>
+      <TermLabel>
+      Phone Number
+            </TermLabel>
+          </th>
+      <th>
+      <TermLabel>
+      City
+            </TermLabel>
+          </th>
+      <th>
+      <TermLabel>
+      Status
+            </TermLabel>
+          </th>
+    </tr>
+  </thead>
+  <tbody>
+    {!isLoading ? (
+            dataUser.map(td => {
+              return (
+                  <>
+                  <TableTD item={td} />
+                  </>
+              );
+            })
+          ) : (
+            <p>Loading...</p>
+          )}
+  </tbody>
+</table>
+                        </OverflowXTable>
+                    </Section20>
+                    </Col>          
+                </Row>
+            </Section41>
         </section>
-       
   </div>
 </Container>
         </div>
@@ -336,36 +455,4 @@ aaa
 }
  
 export default Dashboard;
-
-const Subtitle = styled.span`
-    font-size: 20px;
-    
-`;
-const TitleGraph = styled.p`
-    font-size: 14px;
-    font-weight: 400;
-`;
-const TextUnit = styled.span`
-    font-size: 14px;
-    color: #b5b5b5;
-    font-weight: 300;
-    padding-left: 20px;
-    padding-top: 7px;
-`;
-const NumberOnStatistic = styled.span`
-    font-size: 22px
-    font-weight: 700;
-`;
-
-const Section41 = styled.div`
-    padding-top: 41px;
-    padding-bottom: 41px;
-    padding-left: 41px;
-    width: 100%;
-`;
-
-const Down40 = styled.div`
-    padding-top: 40px;
-    width: 100%;
-`;
 
