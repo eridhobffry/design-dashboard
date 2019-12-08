@@ -1,8 +1,4 @@
 import React, { Component } from 'react'
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar"
-
-import GlobalStyle from './styles/Global';
 import "./assets/css/style.css"
 
 import AdminLayout from "./pages/layout/admin/component"

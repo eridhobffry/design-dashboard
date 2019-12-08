@@ -41,6 +41,8 @@ class Dashboard extends React.Component {
         errors: null
       };
 
+      // get data from API
+      // TOP OVERVIEW DATA
       getTopDataOverview() {
         axios
           .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
@@ -62,6 +64,8 @@ class Dashboard extends React.Component {
           .catch(error => this.setState({ error, isLoading: false }));
       }
 
+      // get data from API
+      // USER DATA
       getDataUser() {
         axios
           .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
@@ -85,6 +89,8 @@ class Dashboard extends React.Component {
           .catch(error => this.setState({ error, isLoading: false }));
       }
 
+      // get data from API
+      // GENERAL RESULTS DATA
       getGeneralResultsStat() {
         axios
           .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
@@ -105,6 +111,8 @@ class Dashboard extends React.Component {
           .catch(error => this.setState({ error, isLoading: false }));
       }
 
+      // get data from API
+      // RATING CATEGORY DATA
       getRatingsCategory() {
         axios
           .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
@@ -124,7 +132,9 @@ class Dashboard extends React.Component {
           })
           .catch(error => this.setState({ error, isLoading: false }));
       }
-    
+      
+      // get data from API
+      // USING DID MOUNT TO CALL THE FUNCTIOIN
       componentDidMount() {
         this.getTopDataOverview();
         this.getGeneralResultsStat();
@@ -133,6 +143,8 @@ class Dashboard extends React.Component {
       }
  
   render() {
+
+      //TEST DATA IF CALLED
       console.log(this.state.topDataOverview)
       console.log(this.state.generalResultsStat)
       console.log(this.state.ratingsCategoryStat)

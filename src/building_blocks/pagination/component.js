@@ -1,7 +1,7 @@
 import React from 'react'
 import {Pagination} from "../../styles/fragment/pagination/component"
 
-const ButtonOpened = ({item}) => {
+const PaginationTabs = ({item}) => {
     return (
         <>
             <Pagination>
@@ -12,4 +12,4 @@ const ButtonOpened = ({item}) => {
     )
 }
 
-export default ButtonOpened
+export default PaginationTabs

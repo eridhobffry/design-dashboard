@@ -1,6 +1,7 @@
 import React from 'react'
 import {TextLight} from "../../styles/fragment/table/component"
 
+//Import component building blocks
 import ButtonSent from "../button/sent"
 import ButtonOpened from "../button/opened"
 

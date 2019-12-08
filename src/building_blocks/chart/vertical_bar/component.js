@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import "../../../../node_modules/react-vis/dist/style.css"
 
-import {XYPlot, LineSeries, VerticalBarSeries, XAxis, HorizontalGridLines} from 'react-vis';
+import {XYPlot, VerticalBarSeries, XAxis} from 'react-vis';
 
 const VerticalBar = ({item, color}) => {
     return (
