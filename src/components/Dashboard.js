@@ -16,7 +16,8 @@ import {
     Section20,
     TermLabel,
     TermValue,
-    OverflowXTable
+    OverflowXTable,
+    TextLight
 } from "../styles/fragment/dashboard_style/component"
 
 import axios from 'axios';
@@ -391,36 +392,36 @@ class Dashboard extends React.Component {
                 <Col xs={12} sm={12} md={12} lg={12}>
                     <Section20>
                         <OverflowXTable>
-                        <table>
+                        <table role="table">
   <thead>
-    <tr>
-      <th>
-      <TermLabel>
+    <tr role="row">
+      <th role="columnheader">
+      <TermLabel className="data-row-table">
       Name
             </TermLabel>
           </th>
-      <th>
-      <TermLabel>
+      <th role="columnheader">
+      <TermLabel className="data-row-table">
       Email
             </TermLabel>
           </th>
-      <th>
-      <TermLabel>
+      <th role="columnheader">
+      <TermLabel className="data-row-table">
       Time
             </TermLabel>
           </th>
-      <th>
-      <TermLabel>
+      <th role="columnheader">
+      <TermLabel className="data-row-table">
       Phone Number
             </TermLabel>
           </th>
-      <th>
-      <TermLabel>
+      <th role="columnheader">
+      <TermLabel className="data-row-table">
       City
             </TermLabel>
           </th>
-      <th>
-      <TermLabel>
+      <th role="columnheader">
+      <TermLabel className="data-row-table">
       Status
             </TermLabel>
           </th>

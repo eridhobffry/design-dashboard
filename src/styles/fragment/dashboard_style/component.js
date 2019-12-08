@@ -60,5 +60,9 @@ export const OverflowXTable = styled.div`
     overflow-x: auto;
 `;
 
+export const TextLight = styled.div`
+    font-weight: lighter;
+`;
+
 
 export default DivRight
