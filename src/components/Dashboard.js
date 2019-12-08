@@ -16,8 +16,7 @@ import {
     Section20,
     TermLabel,
     TermValue,
-    OverflowXTable,
-    TextLight
+    OverflowXTable
 } from "../styles/fragment/dashboard_style/component"
 
 // https://my-json-server.typicode.com/eridhobffry/demo/db 
@@ -125,57 +124,19 @@ class Dashboard extends React.Component {
           })
           .catch(error => this.setState({ error, isLoading: false }));
       }
-
-    //   getDataRatingsCategory() {
-    //     axios
-    //       .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
-    //       .then(response =>
-    //         response.data.dataRatingsCategory.map(td => ({
-    //           x: `${td.x}`,
-    //           y: `${td.y}`
-    //         }))
-    //       )
-    //       .then(dataRatingVer => {
-    //         this.setState({
-    //             dataRatingVer,
-    //           isLoading: false
-    //         });
-    //       })
-    //       .catch(error => this.setState({ error, isLoading: false }));
-    //   }
-
-    //   getDataGeneralResults() {
-    //     axios
-    //       .get("https://my-json-server.typicode.com/eridhobffry/demo/db")
-    //       .then(response =>
-    //         response.data.dataGeneralResults.map(td => ({
-    //           x: `${td.x}`,
-    //           y: `${td.y}`
-    //         }))
-    //       )
-    //       .then(dataGeneralVer => {
-    //         this.setState({
-    //             dataGeneralVer,
-    //           isLoading: false
-    //         });
-    //       })
-    //       .catch(error => this.setState({ error, isLoading: false }));
-    //   }
     
       componentDidMount() {
         this.getTopDataOverview();
         this.getGeneralResultsStat();
         this.getRatingsCategory();
         this.getDataUser();
-        // this.getDataGeneralResults();
-        // this.getDataRatingsCategory();
       }
  
   render() {
       console.log(this.state.topDataOverview)
       console.log(this.state.generalResultsStat)
       console.log(this.state.ratingsCategoryStat)
-      console.log(this.state.dataRatingVer)
+      console.log(dataRatingVer)
       console.log(dataGeneralVer)
       console.log(this.state.dataUser)
 
