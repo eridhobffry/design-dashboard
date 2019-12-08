@@ -16,7 +16,7 @@ export const TitleGraph = styled.p`
 export const TextUnit = styled.span`
     font-size: 14px;
     color: #b5b5b5;
-    font-weight: 300;
+    font-weight: 400;
     padding-left: 20px;
     padding-top: 7px;
 `;
