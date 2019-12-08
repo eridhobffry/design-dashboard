@@ -1,7 +1,5 @@
 import React from "react";
-import Sidebar from "react-sidebar";
 import styled from "styled-components";
-import DashboardPage from "./Dashboard"
 
 import Dashboard from "../assets/img/Dashboard.png";
 import Chat from "../assets/img/Chat.png";
