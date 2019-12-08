@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from "styled-components";
-
-// import logo from "../assets/img/logo-min.png";
 import logo from "../assets/img/example-logo.png";
 
 const Brand = () => {
