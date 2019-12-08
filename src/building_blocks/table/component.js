@@ -1,6 +1,9 @@
 import React from 'react'
 import {TextLight} from "../../styles/fragment/table/component"
 
+import ButtonSent from "../button/sent"
+import ButtonOpened from "../button/opened"
+
 
 const TableTD = ({item}) => {
     return (
@@ -31,7 +34,14 @@ const TableTD = ({item}) => {
                 {item.city}
                 </TextLight>
                 </td>
-            <td role="cell">{item.status}</td>
+            <td role="cell">
+                {item.status === "sent" ?
+                <ButtonSent/>
+            :
+                <ButtonOpened/>
+            }
+                
+                </td>
         </tr>
             
         </>

@@ -113,7 +113,7 @@ const NavLinksButtons = styled(animated.ul)`
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
-    background: blue;
+    background: rgb(0, 119, 255);
     color: white;
     border-radius: 5px;
     text-transform: uppercase;
